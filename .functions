@@ -1,0 +1,7 @@
+function darwin_ls(){
+  gls $1 --human-readable --group-directories-first --color -1 -X -s -h --block-size=MB | awk "{if(NR>1)print}"
+}
+
+function linux_ls(){
+  /bin/ls $1 -1 -s --color -h | /bin/awk "{if(NR>1)print}" | /bin/column -t
+}

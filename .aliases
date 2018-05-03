@@ -1,0 +1,6 @@
+alias dev="cd ~/dev"
+
+case $(uname) in
+  'Linux') alias ls=linux_ls $1 ;;
+  'Darwin') alias ls=darwin_ls $1
+esac

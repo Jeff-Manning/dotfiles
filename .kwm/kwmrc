@@ -1,0 +1,43 @@
+kwmc config add-role AXDialog iTerm2
+
+# The mouse will automatically move to the center
+# of the focused window
+kwmc config mouse-follows-focus on
+kwmc config focus mouse-follows on
+
+# Set default values for screen padding
+kwmc config padding top 40
+kwmc config padding bottom 70
+kwmc config padding left 20
+kwmc config padding right 20
+
+# Set default values for container gaps
+kwmc config gap vertical 15
+kwmc config gap horizontal 15
+
+# Allow Kwm to tile windows
+kwmc config tiling enable
+
+# Let Kwm listen for hotkeys
+kwmc config hotkeys enable
+
+# The following command blacklists a specific application
+# from Kwms tiling (PS: The app name is case-sensitive)
+# If the name consist of multiple words, the command
+# looks like: kwmc config float Google Chrome
+
+# Whitelist everything other than iTerm2
+kwmc rule owner="(?!iTerm2).*" properties={float="true"}
+
+# Turns off "center window when floating"
+kwmc config center-on-float off
+
+kwmc rule properties={float="true"} owner="Messages"
+kwmc rule properties={float="true"} owner="App Store"
+kwmc rule properties={float="true"} owner="Airmail"
+kwmc rule properties={float="true"} owner="Airmail 3"
+kwmc rule properties={float="true"} owner="Slack"
+kwmc rule properties={float="true"} owner="Calculator"
+kwmc rule properties={float="true"} owner="Finder"
+kwmc rule properties={float="true"} owner="Google Hangouts"
+kwmc rule properties={float="true"} owner="PyCharm"
